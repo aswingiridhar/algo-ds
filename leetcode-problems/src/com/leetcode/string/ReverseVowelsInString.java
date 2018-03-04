@@ -8,7 +8,7 @@ import java.util.Set;
  * 
  * https://leetcode.com/problems/reverse-vowels-of-a-string/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class ReverseVowelsInString {

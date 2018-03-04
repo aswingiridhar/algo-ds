@@ -11,7 +11,7 @@ import java.util.Map;
  * 
  * Problem : https://leetcode.com/problems/sort-characters-by-frequency/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class FrequencyOfCharactersSort {

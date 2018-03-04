@@ -4,7 +4,7 @@ package com.leetcode.string;
  * 
  * Problem : https://leetcode.com/problems/is-subsequence/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class IsSubsequence {

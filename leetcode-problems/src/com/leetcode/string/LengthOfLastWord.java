@@ -4,7 +4,7 @@ package com.leetcode.string;
  * 
  * Problem : https://leetcode.com/problems/length-of-last-word/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class LengthOfLastWord {

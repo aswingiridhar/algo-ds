@@ -6,7 +6,7 @@ package com.leetcode.string;
  * 
  * Problem : https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class SlidingWindow_LongestPalindromeSubstring {

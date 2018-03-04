@@ -4,7 +4,7 @@ package com.leetcode.string;
  * 
  * Problem : https://leetcode.com/problems/add-binary/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class AddBinaryNumbers {

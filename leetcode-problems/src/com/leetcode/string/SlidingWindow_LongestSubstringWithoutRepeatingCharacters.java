@@ -7,7 +7,7 @@ import java.util.Map;
  * 
  * Problem : https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class SlidingWindow_LongestSubstringWithoutRepeatingCharacters {

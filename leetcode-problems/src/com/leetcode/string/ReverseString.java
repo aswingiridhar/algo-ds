@@ -5,7 +5,7 @@ package com.leetcode.string;
  * 
  * https://leetcode.com/problems/reverse-string/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class ReverseString {

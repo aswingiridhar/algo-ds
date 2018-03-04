@@ -6,7 +6,7 @@ import java.util.HashMap;
  * 
  * Problem : https://leetcode.com/problems/isomorphic-strings/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class IsomorphicString {

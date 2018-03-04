@@ -6,7 +6,7 @@ import java.util.HashMap;
  * 
  * Problem : https://leetcode.com/problems/word-pattern/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class WordPattern {

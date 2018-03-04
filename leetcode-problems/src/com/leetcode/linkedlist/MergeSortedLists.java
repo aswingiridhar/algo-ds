@@ -28,7 +28,7 @@ public class MergeSortedLists {
 		l2.next = l2next1;
 		l2next1.next = l2next2;
 		
-		printLinkedList(mergeTwoLists(l1, l2));
+		printLinkedList(mergeTwoListsRegular(l1, l2));
 		
 	}
 
@@ -46,6 +46,39 @@ public class MergeSortedLists {
 			return l2;
 		}
 		
+	}
+	
+	public static ListNode mergeTwoListsRegular(ListNode l1, ListNode l2) {
+		
+		if (l1 == null) return l2;
+		
+		if (l2 == null) return l1;
+		
+		ListNode result = new ListNode(0);
+		ListNode temp = result;
+		
+		while (l1 != null && l2 != null) {
+			
+			if (l1.val < l2.val) {
+				temp.next= l1;
+				l1 = l1.next;
+			} else {
+				temp.next = l2;
+				l2 = l2.next;
+			}
+			
+			temp = temp.next;
+			
+		}
+		
+		if (l1 != null) {
+			temp.next = l1;
+		}
+		if (l2 != null) {
+			temp.next = l2;
+		}
+		
+		return result.next;
 	}
 	
 	public static void printLinkedList(ListNode head) {

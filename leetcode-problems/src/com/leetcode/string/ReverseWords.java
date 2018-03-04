@@ -6,7 +6,7 @@ package com.leetcode.string;
  * 
  * https://leetcode.com/problems/reverse-words-in-a-string/description/
  * 
- * @author hariniaswin
+ * @author agiridhar
  *
  */
 public class ReverseWords {

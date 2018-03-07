@@ -26,9 +26,9 @@ public class ReverseLinkedList {
 		
 		System.out.println("");
 		
-//		printLinkedList(reverseListIterative(head));
+		printLinkedList(reverseListIterative(head));
 //		System.out.println("");
-		printLinkedList(reverseListRecursive(head));
+//		printLinkedList(reverseListRecursive(head));
 		
 	}
 	

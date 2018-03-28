@@ -1,8 +1,5 @@
 package com.leetcode.list;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * 
  * 	https://leetcode.com/problems/sort-colors/description/
@@ -26,8 +23,8 @@ public class SortColors {
 	}
 	
 	/* Simple two-pointer approach to sort list into 3 buckets   *
-	 * Treat p0 and p2 as mere container end-points. Iterate with*
-	 * i and whenever there is a match, push to container        *
+	 * Treat left and right as mere container end-points. Iterate with*
+	 * index and whenever there is a match, push to container        *
 	 * Note: very similar to ds_list_remove_element.cc           *
 	 * Time complexity = O(n)     Space complexity = O(1)        */
 	public static void sortColors(int[] nums) {

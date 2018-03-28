@@ -13,7 +13,7 @@ public class SlidingWindow_LongestPalindromeSubstring {
 	
 	public static void main (String [] args) {
 		
-		System.out.println("Longest Palindrome : " + longestPalindrome("ababa").toString());
+		System.out.println("Longest Palindrome : " + longestPalindrome("bandana").toString());
 		
 	}
 	

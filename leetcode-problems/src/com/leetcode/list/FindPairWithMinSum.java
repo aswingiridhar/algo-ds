@@ -16,10 +16,10 @@ public class FindPairWithMinSum {
 	public static void main(String []args) {
 		int []arr = {1,30,-5,70,-8,20,-40,60};
 		
-		findPairWithMinSum(arr);
+		findPairWithMinSumClosestToZero(arr);
 	}
 	
-	public static void findPairWithMinSum(int []arr) {
+	public static void findPairWithMinSumClosestToZero(int []arr) {
 		
 		// sort the array
 		Arrays.sort(arr);

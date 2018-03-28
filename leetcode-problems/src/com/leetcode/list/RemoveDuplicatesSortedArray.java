@@ -11,8 +11,10 @@ public class RemoveDuplicatesSortedArray {
 	
 	public static void main(String []args) {
 		int [] nums = {1,2,2,3,3};
-		
 		System.out.println("removeDuplicates: " + removeDuplicates(nums));
+		
+		int [] nums2 = {1,1,1,2,2,3,3};
+		System.out.println("removeDuplicates with k duplicates: " + removeDuplicates(nums2 ,2));
 	}
 	
 	public static int removeDuplicates(int[] nums) {
@@ -33,6 +35,22 @@ public class RemoveDuplicatesSortedArray {
 			} 
 			
 		}
+		
+		return index;
+    }
+	
+	public static int removeDuplicates(int[] nums, int k) {
+        
+		int index = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+			
+			if (index < k || nums[i] > nums[index-k]) {
+				nums[index++] = nums[i];
+			}
+			
+		}
+		
 		
 		return index;
     }

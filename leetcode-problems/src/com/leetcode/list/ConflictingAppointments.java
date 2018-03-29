@@ -3,7 +3,7 @@ package com.leetcode.list;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ColludingAppointments {
+public class ConflictingAppointments {
 	
 	public static void main(String []args) {
 		
@@ -17,16 +17,10 @@ public class ColludingAppointments {
  		
  		convertToStartAndEndArray(arr, start, end);
  		
- 		for (int i : start) {
- 			System.out.println("Start Times: " + i);
- 		}
- 		for (int i : end) {
- 			System.out.println("End Times: " + i);
- 		}
 		
- 		Map<Integer, Integer> colludingAppointments = findColludingAppointments(start, end);
- 		
- 		for (Map.Entry<Integer, Integer> entry : colludingAppointments.entrySet()) {
+ 		Map<Integer, Integer> conflictingAppointments = findConflictingAppointments(start, end);
+ 		System.out.println("Conflicting Events are: ");
+ 		for (Map.Entry<Integer, Integer> entry : conflictingAppointments.entrySet()) {
  			System.out.println("(" + entry.getKey() + "," + entry.getValue() + ")" );
  		}
  		
@@ -48,7 +42,7 @@ public class ColludingAppointments {
 		
 	}
 	
-	public static Map<Integer, Integer> findColludingAppointments(int[] start, int [] end) {
+	public static Map<Integer, Integer> findConflictingAppointments(int[] start, int [] end) {
 		
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		
@@ -57,7 +51,11 @@ public class ColludingAppointments {
 		
 		for (int i = 1; i < start.length; i++) {
 			
-			if (start[i] > end[i - 1] )
+			// there is a conflict
+			if (start[i] < end[i - 1]) {
+				map.put(start[i-1], end[i-1]);
+				map.put(start[i], end[i]);
+			}
 			
 		}
 		

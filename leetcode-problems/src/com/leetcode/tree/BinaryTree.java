@@ -23,18 +23,79 @@ public class BinaryTree {
 		
 		TreeNode root = createBinaryTree();
 		
+		System.out.println("Level of Node 50: " + findLevelOfNode(root, 50, 1));
+		
+		System.out.println("Max Element: " + findMaxElement(root));
+		
 		System.out.println("Print Leaf Nodes: ");
-		printLeadNodes(root);
-		System.out.println("Count of Leaf Nodes: " + countLeadNodes(root));
+		printLeafNodes(root);
+		
+		System.out.println("Print All Paths to Leaf Nodes: ");
+		
+		printAllPathsToLeafNodes(root, new int[1000], 0);
+		
+		System.out.println("Count of Leaf Nodes: " + countLeafNodes(root));
+		
 		System.out.println("PreOrder: ");
 		preOrder(root);
+		
 		System.out.println("InOrder: ");
 		inOrder(root);
+		
 		System.out.println("PostOrder: ");
 		postOrder(root);
+		
 		System.out.println("LevelOrder: ");
 		levelOrder(root);
 		
+	}
+	
+	public static int findLevelOfNode(TreeNode node, int key, int level) {
+		
+		if (node == null) {
+			return 0;
+		}
+		
+		if (node.data == key) {
+			return level;
+		}
+		
+		int result = findLevelOfNode(node.left, key, level+1);
+		
+		if (result != 0) {
+			return result;
+		}
+		
+		result = findLevelOfNode(node.right, key, level+1);
+		
+		return result;
+		
+	}
+	
+	public static int findMaxElement(TreeNode node) {
+		
+		int left = 0, right = 0, max = Integer.MIN_VALUE, currentValue = 0;
+		
+		if (node != null) {
+			
+			currentValue = node.data;
+			
+			left = findMaxElement(node.left);
+			right = findMaxElement(node.right);
+			
+			if (left < right) {
+				max = right;
+			} else {
+				max = left;
+			}
+			
+			if (currentValue > max) {
+				max = currentValue;
+			}
+			
+		}
+		
+		return max;
 	}
 	
 	public static void preOrder(TreeNode root) {
@@ -89,7 +150,7 @@ public class BinaryTree {
 		
 	}
 	
-	public static void printLeadNodes(TreeNode root) {
+	public static void printLeafNodes(TreeNode root) {
 		
 		if (root == null)
 			return;
@@ -98,12 +159,12 @@ public class BinaryTree {
 			System.out.println(root.data);
 		} 
 		
-		printLeadNodes(root.left);
-		printLeadNodes(root.right);
+		printLeafNodes(root.left);
+		printLeafNodes(root.right);
 		
 	}
 	
-	public static int countLeadNodes(TreeNode root) {
+	public static int countLeafNodes(TreeNode root) {
 		
 		if (root == null) {
 			return 0;
@@ -113,7 +174,31 @@ public class BinaryTree {
 			return 1;
 		}
 		
-		return countLeadNodes(root.left) + countLeadNodes(root.right);
+		return countLeafNodes(root.left) + countLeafNodes(root.right);
+	}
+	
+	public static void printAllPathsToLeafNodes(TreeNode node, int []path, int len) {
+		
+		if (node == null)
+			return;
+		
+		path[len] = node.data;
+		len++;
+		
+		if (node.left == null && node.right == null) {
+			printArray(path, len);
+			return;
+		}
+		printAllPathsToLeafNodes(node.left, path, len);
+		printAllPathsToLeafNodes(node.right, path, len);
+	}
+	
+	public static void  printArray(int[] path,int len)
+	{
+		for (int i = 0; i < len; i++) {
+			System.out.print(" "+path[i]);
+		}
+		System.out.println();
 	}
 	
 	public static TreeNode createBinaryTree() {

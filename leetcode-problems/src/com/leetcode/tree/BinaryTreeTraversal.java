@@ -3,8 +3,13 @@ package com.leetcode.tree;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
+ * 
+ * https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/
+ * 
+ * https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/
  * 
  * @author agiridhar
  *
@@ -23,6 +28,9 @@ public class BinaryTreeTraversal {
 		
 		List<List<Integer>> list3 = zigzagLevelOrder(root);
 		System.out.println(printBT(list3));
+		
+		System.out.println("PreOrder Traversal: " + preorderTraversal(root));
+		System.out.println("InOrder Traversal: " + inorderTraversal(root));
 		
 	}
 	
@@ -136,6 +144,78 @@ public class BinaryTreeTraversal {
 			list.add(sublist);
 			
 			level++;
+		}
+		
+		return list;
+	}
+	
+	public static List<Integer> preorderTraversal(TreeNode root) {
+		List<Integer> list = new LinkedList<Integer>();
+		
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		stack.push(root);
+		
+		while (!stack.isEmpty()) {
+			
+			TreeNode node = stack.pop();
+			if (node != null) {
+				list.add(node.data);
+				
+				if (node.right != null) {
+					stack.push(node.right);
+				}
+				
+				if (node.left != null) {
+					stack.push(node.left);
+				}
+			}
+			
+		}
+		
+		return list;
+	}
+	
+	public static List<Integer> inorderTraversal(TreeNode root) {
+		List<Integer> list = new LinkedList<Integer>();
+		
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		
+		TreeNode current = root;
+		
+		while (current != null || !stack.empty()) {
+			
+			if (current != null) {
+				stack.push(current);
+				current = current.left;
+			} else {
+				TreeNode node = stack.pop();
+				list.add(node.data);
+				current = node.right;
+			}
+			
+		}
+		
+		return list;
+	}
+	
+	public static List<Integer> postorderTraversal(TreeNode root) {
+		List<Integer> list = new LinkedList<Integer>();
+		
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		
+		TreeNode current = root;
+		
+		while (current != null || !stack.empty()) {
+			
+			if (current != null) {
+				stack.push(current);
+				current = current.left;
+			} else {
+				TreeNode node = stack.pop();
+				list.add(node.data);
+				current = node.right;
+			}
+			
 		}
 		
 		return list;

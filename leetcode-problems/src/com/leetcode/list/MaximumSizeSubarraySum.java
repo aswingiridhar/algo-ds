@@ -22,8 +22,9 @@ public class MaximumSizeSubarraySum {
 		int [] nums = {1, -1, 5, -2, 3};
 		int [] nums2 = {-2, -1, 2, 1};
 		
-		System.out.println("Minimum Size Sub Array Sum Length : " + maxSubArrayLen(3, nums));
-		System.out.println("Minimum Size Sub Array Sum Length : " + maxSubArrayLen(1, nums2));
+		System.out.println("Maximum Size Sub Array Sum Length : " + maxSubArrayLen(3, nums)); // expect 4 
+		System.out.println("Maximum Size Sub Array Sum Length : " + maxSubArrayLen(1, nums2)); // expect 2
+		
 	}
 	
 	public static int maxSubArrayLen(int k, int[] nums) {
@@ -53,4 +54,5 @@ public class MaximumSizeSubarraySum {
         
 		return max == Integer.MIN_VALUE ? 0 : max;
 	}
+	
 }

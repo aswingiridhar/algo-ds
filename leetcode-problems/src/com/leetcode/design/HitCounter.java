@@ -33,15 +33,21 @@ public class HitCounter {
 	
 	public int getHits(int timestamp) {
 		
-		while (!queue.isEmpty()) {
-			if (timestamp - queue.peek() > MAX_DURATION) {
-				queue.poll();
-			}
+		while (!queue.isEmpty() && timestamp - queue.peek() > MAX_DURATION) {
+			queue.poll();
 		}
 		return queue.size();
 	}
 	
 	public static void main(String []args) {
+		HitCounter counter = new HitCounter();
 		
+		counter.hit(1);
+		counter.hit(2);
+		counter.hit(3);
+		System.out.println("Hits: " + counter.getHits(4));
+		counter.hit(300);
+		System.out.println("Hits: " + counter.getHits(301));
+		System.out.println("Hits: " + counter.getHits(302));
 	}
 }
